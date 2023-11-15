@@ -18,53 +18,6 @@ const benefits = {
     })
 }
 
-// bot.on("message", async msg =>{
-//     const text = msg.text;
-//     const chatId = msg.chat.id;
-//     const username = msg.from.username
-//     if (text == "/start") {
-//         return bot.sendMessage(chatId, "Привіт! Я твій бот");
-//     }
-//     if (text == "/consultation") {
-
-//         await bot.sendMessage(chatId,"Введіть ваше ПІБ:")
-//         .then(() => {
-//             bot.once("message", async msg => {
-//                 return bot.sendMessage(chatId, "Наявність пільг", benefits)
-//                     .then((msg_benefits)  =>{
-//                     bot.on("callback_query", async msg =>{
-//                         const data = msg.data;
-//                         const benefitsId = msg_benefits.message_id
-//                         if (data == "true") {
-//                             await bot.deleteMessage(chatId, benefitsId)
-//                             return bot.sendMessage(chatId, "Відправте фото пільг")
-//                         }
-//                         else{
-//                             await bot.deleteMessage(chatId, benefitsId)
-//                             return bot.sendMessage(chatId, "Поверхово опишіть свій запит:")
-//                             .then(() =>{
-//                                 bot.on("message", async msg => {
-//                                     return bot.sendMessage(chatId, "Ваша заявка була відправленна!")
-//                                 })
-//                             })
-//                         }
-
-//                     })
-//                 })
-                
-//                 .then(() =>{
-//                     bot.on("message", async msg => {
-
-//                     })
-//                 })
-//             })
-//         })
-//         .catch((erorr) =>{
-//             console.error(error)
-//         })
-
-//     }
-// })
 bot.onText(/\/consultation/, (msg) => {
     const chatId = msg.chat.id;
     const username = msg.from.username
