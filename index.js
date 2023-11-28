@@ -116,6 +116,7 @@ bot.onText(/\/consultation/, async (msg) => {
     }
 });
 // Нужно создать обьект в котором будет пользователи и у пользователей будут параметры "step" и "action"
+function getUsername(username) {
     if (username === undefined) {
         console.log(username)
         return "Користувач не надав данні\n";
